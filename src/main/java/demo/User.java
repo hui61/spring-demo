@@ -7,6 +7,11 @@ public class User {
     private int age;
     private List<String> phones;
 
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }

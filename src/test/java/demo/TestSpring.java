@@ -35,4 +35,11 @@ public class TestSpring {
         // 3.调用方法
         userService.print();
     }
+
+    @Test
+    void test_constructor_di() {
+        ApplicationContext act = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        User user = (User) act.getBean(User.class);
+        System.out.println(user.getName());
+    }
 }
