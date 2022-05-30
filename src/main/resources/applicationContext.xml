@@ -19,7 +19,8 @@
 <!--    <bean id="userService" class="demo.impl.UserServiceImpl">-->
 <!--        <property name="userDao" ref="userDao"/>-->
 <!--    </bean>-->
+<!--    <bean id="userDao" class="demo.impl.UserDaoImpl" />-->
+<!--    <bean id="userService" autowire="byName" class="demo.impl.UserServiceImpl" />-->
     <bean id="userDao" class="demo.impl.UserDaoImpl" />
-
-    <bean id="userService" autowire="byName" class="demo.impl.UserServiceImpl" />
+    <bean id="userService" autowire="byType" class="demo.impl.UserServiceImpl" />
 </beans>
