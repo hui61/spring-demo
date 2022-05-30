@@ -4,4 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="userService" class="demo.UserServiceImpl"/>
+    <bean id="user" class="demo.User">
+        <property name="name" value="知否君" />
+        <property name="age" value="18" />
+    </bean>
 </beans>
