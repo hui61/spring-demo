@@ -42,4 +42,11 @@ public class TestSpring {
         User user = (User) act.getBean(User.class);
         System.out.println(user.getName());
     }
+
+    @Test
+    void implement_initializingBean_interface() {
+        ApplicationContext act = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        Object user = act.getBean("user");
+        System.out.println(user);
+    }
 }

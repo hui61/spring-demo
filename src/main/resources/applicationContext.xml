@@ -22,8 +22,9 @@
 <!--    <bean id="userService" autowire="byName" class="demo.impl.UserServiceImpl" />-->
     <bean id="userDao" class="demo.impl.UserDaoImpl" />
     <bean id="userService" autowire="byType" class="demo.impl.UserServiceImpl" />
-    <bean class="demo.User">
-        <constructor-arg value="张三"/>
-        <constructor-arg value="18"/>
-    </bean>
+<!--    <bean class="demo.User" lazy-init="true">-->
+<!--        <constructor-arg value="张三"/>-->
+<!--        <constructor-arg value="18"/>-->
+<!--    </bean>-->
+    <bean id="user" class="demo.User" lazy-init="true"/>
 </beans>
