@@ -20,15 +20,16 @@
 <!--    </bean>-->
 <!--    <bean id="userDao" class="demo.impl.UserDaoImpl" />-->
 <!--    <bean id="userService" autowire="byName" class="demo.impl.UserServiceImpl" />-->
-    <bean id="userDao" class="demo.impl.UserDaoImpl" />
-    <bean id="userService" autowire="byType" class="demo.impl.UserServiceImpl" />
+<!--    <bean id="userDao" class="demo.impl.UserDaoImpl" />-->
+<!--    <bean id="userService" autowire="byType" class="demo.impl.UserServiceImpl" />-->
 <!--    <bean class="demo.User" lazy-init="true">-->
 <!--        <constructor-arg value="张三"/>-->
 <!--        <constructor-arg value="18"/>-->
 <!--    </bean>-->
 <!--    <bean id="user" class="demo.User" lazy-init="true"/>-->
-    <bean id="user" class="demo.User" init-method="initMethod" >
+    <bean id="user" class="demo.User" init-method="initMethod" destroy-method="destroyMethod" >
         <property name="name" value="知否君"/>
         <property name="age" value="23"/>
     </bean>
+    <bean id="beanProcessor" class="demo.BeanProcessor"/>
 </beans>

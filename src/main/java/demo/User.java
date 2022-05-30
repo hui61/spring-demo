@@ -1,10 +1,11 @@
 package demo;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.util.List;
 
-public class User implements InitializingBean {
+public class User implements InitializingBean, DisposableBean {
     private String name;
     private int age;
     private List<String> phones;
@@ -59,6 +60,16 @@ public class User implements InitializingBean {
     // 初始化方法
     public void initMethod() {
         this.name = "张无忌";
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("实现销毁接口方法");
+    }
+
+    // 销毁方法
+    public void destroyMethod() {
+        System.out.println("自定义销毁方法");
     }
 }
 
