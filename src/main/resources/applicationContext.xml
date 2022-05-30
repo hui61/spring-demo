@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 <!--    <bean id="user" class="demo.User">-->
 <!--        <property name="name" value="知否君" />-->
@@ -27,9 +28,15 @@
 <!--        <constructor-arg value="18"/>-->
 <!--    </bean>-->
 <!--    <bean id="user" class="demo.User" lazy-init="true"/>-->
-    <bean id="user" class="demo.User" init-method="initMethod" destroy-method="destroyMethod" >
-        <property name="name" value="知否君"/>
-        <property name="age" value="23"/>
-    </bean>
-    <bean id="beanProcessor" class="demo.BeanProcessor"/>
+<!--    <bean id="user" class="demo.User" init-method="initMethod" destroy-method="destroyMethod" >-->
+<!--        <property name="name" value="知否君"/>-->
+<!--        <property name="age" value="23"/>-->
+<!--    </bean>-->
+<!--    <bean id="beanProcessor" class="demo.BeanProcessor"/>-->
+    <bean id="calculateService"  class="proxy.CalculateServiceImpl" />
+    <bean id="printLog" class="proxy.PrintLog" />
+    <aop:config>
+        <aop:pointcut id="pc" expression="execution(* * (..))"/>
+        <aop:advisor advice-ref="printLog" pointcut-ref="pc"/>
+    </aop:config>
 </beans>
