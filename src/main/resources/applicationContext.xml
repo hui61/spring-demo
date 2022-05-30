@@ -3,9 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userService" class="demo.UserServiceImpl"/>
     <bean id="user" class="demo.User">
         <property name="name" value="知否君" />
         <property name="age" value="18" />
+        <property name="phones">
+            <list>
+                <value>15799999918</value>
+                <value>15788888819</value>
+                <value>15766666620</value>
+            </list>
+        </property>
+
+    </bean>
+    <bean id="userDao" class="demo.impl.UserDaoImpl" />
+    <bean id="userService" class="demo.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
     </bean>
 </beans>

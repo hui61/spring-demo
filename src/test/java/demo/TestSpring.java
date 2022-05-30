@@ -23,6 +23,16 @@ public class TestSpring {
         User user = (User)act.getBean("user");
         System.out.println("姓名："+user.getName());
         System.out.println("性别："+user.getAge());
+        System.out.println("Phones" + user.getPhones());
+    }
 
+    @Test
+    public void test_custom(){
+        // 1、获取工厂
+        ApplicationContext act = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        // 2、通过工厂类获得对象
+        UserService userService = (UserService)act.getBean("userService");
+        // 3.调用方法
+        userService.print();
     }
 }
