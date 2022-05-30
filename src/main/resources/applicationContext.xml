@@ -34,9 +34,12 @@
 <!--    </bean>-->
 <!--    <bean id="beanProcessor" class="demo.BeanProcessor"/>-->
     <bean id="calculateService"  class="proxy.CalculateServiceImpl" />
-    <bean id="printLog" class="proxy.PrintLog" />
-    <aop:config>
-        <aop:pointcut id="pc" expression="execution(* * (..))"/>
-        <aop:advisor advice-ref="printLog" pointcut-ref="pc"/>
-    </aop:config>
+<!--    <bean id="printLog" class="proxy.PrintLog" />-->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pc" expression="execution(* * (..))"/>-->
+<!--        <aop:advisor advice-ref="printLog" pointcut-ref="pc"/>-->
+<!--    </aop:config>-->
+    <bean id="testMyAspect"  class="aspect.TestAspect" />
+    <!-- 扫描 aop 相关注解-->
+    <aop:aspectj-autoproxy/>
 </beans>

@@ -68,4 +68,15 @@ public class TestSpring {
         int result = calculateService.add(1, 2);
         System.out.println("result:" + result);
     }
+
+    @Test
+    void aspect_test() {
+        // 1、获取工厂
+        ApplicationContext act = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        // 2、通过工厂类获得对象
+        CalculateService calculateService = (CalculateService) act.getBean("calculateService");
+        // 3.调用方法
+        int result = calculateService.add(100, 1);
+        System.out.println("result:" + result);
+    }
 }
