@@ -49,4 +49,11 @@ public class TestSpring {
         Object user = act.getBean("user");
         System.out.println(user);
     }
+
+    @Test
+    public void test_init_method(){
+        ApplicationContext act = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        Object user = act.getBean("user");
+        System.out.println(user);
+    }
 }

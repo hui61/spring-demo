@@ -55,5 +55,10 @@ public class User implements InitializingBean {
                 ", phones=" + phones +
                 '}';
     }
+
+    // 初始化方法
+    public void initMethod() {
+        this.name = "张无忌";
+    }
 }
 

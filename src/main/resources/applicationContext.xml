@@ -26,5 +26,9 @@
 <!--        <constructor-arg value="张三"/>-->
 <!--        <constructor-arg value="18"/>-->
 <!--    </bean>-->
-    <bean id="user" class="demo.User" lazy-init="true"/>
+<!--    <bean id="user" class="demo.User" lazy-init="true"/>-->
+    <bean id="user" class="demo.User" init-method="initMethod" >
+        <property name="name" value="知否君"/>
+        <property name="age" value="23"/>
+    </bean>
 </beans>
